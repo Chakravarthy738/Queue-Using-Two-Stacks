@@ -40,7 +40,7 @@ class Queue {
     }
     // Return the number of elements in queue.
     public int size() {
-        
+        return stack1.size();
     }
     
     public static void main(String[] args) throws FileNotFoundException {
