@@ -5,39 +5,40 @@ import java.io.*;
 import java.util.*;
 
 class Queue {
-
+    Stack <Integer> stack1;
+    Stack <Integer> stack2;
+    private int firstElement;
 
     public Queue() {
-
+        stack1=new Stack<Integer>();
+        stack2=new Stack<Integer>();
     }
-
     // Push element x to the back of queue.
     public void enqueue(int x) {
-
-    }
-
+        if (stack1.empty()) firstElement = x;
+        stack1.push(x);
+    }      
     // Removes the element from in front of queue.
     public int dequeue() {
-
-    }
     
+    }
     // Get the front element.
     public int peek() {
-
+        
     }
-    
+ 
     // Return whether the queue is empty.
     public boolean empty() {
-
+        
     }
-
     // Return the number of elements in queue.
-    public boolean size() {
-
+    public int size() {
+        
     }
     
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        FileReader f= new FileReader(args[0]);
+        Scanner scan = new Scanner(f);
         Queue queue = new Queue();
         int queries = Integer.parseInt(scan.nextLine());
         for(int i = 0; i < queries; i++) {
@@ -51,5 +52,6 @@ class Queue {
                 System.out.println(queue.peek());
             } 
         }
+        scan.close();
     }
 }
